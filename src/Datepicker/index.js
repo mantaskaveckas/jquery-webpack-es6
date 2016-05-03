@@ -1,4 +1,5 @@
 import { datepicker } from 'jquery-ui';
+import './style.scss';
 
 class Datepicker {
   /**
