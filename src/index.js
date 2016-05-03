@@ -1,22 +1,17 @@
 import Datepicker from './Datepicker';
 
 /**
- * IIFE combined with `$(document).ready`.
- * @function
+ * Handler function passed to `$.ready()`
+ * guaranteed to be executed after the DOM is ready.
  */
-$(() => {
-  class App {
-    /**
-     * Base application constructor.
-     * @constructor
-     */
-    constructor() {
-      new Datepicker('#datepicker').render();
-    }
-  }
+$(() => new App);
 
+class App {
   /**
-   * Initialize application.
+   * Base application constructor.
+   * @constructor
    */
-  new App();
-});
+  constructor() {
+    new Datepicker('#datepicker').render();
+  }
+}

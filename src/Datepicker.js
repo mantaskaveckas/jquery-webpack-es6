@@ -2,7 +2,7 @@ import { datepicker } from 'jquery-ui';
 
 class Datepicker {
   /**
-   * Sample datepicker widget constructor.
+   * Datepicker widget constructor.
    * @param  {string} target Target DOM Node ID.
    */
   constructor(target) {
