@@ -1,10 +1,11 @@
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: __dirname + '/dist',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     loaders: [
@@ -15,12 +16,13 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'sass'],
+        loader: ExtractTextPlugin.extract('style', 'css!sass'),
         exclude: /node_modules/
       }
     ]
   },
   plugins: [
+    new ExtractTextPlugin('[name].css'),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
